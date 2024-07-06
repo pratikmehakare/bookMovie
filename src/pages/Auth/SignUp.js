@@ -60,7 +60,7 @@ const SignUp = () => {
 
       if (response.user) {
         toast.success("Sign Up Successful");
-        navigate("/login");
+        navigate("/");
       }
     } catch (error) {
       if (

@@ -7,7 +7,7 @@ const { GET_ALLMOVIES_API, GET_USER_API, GET_MOVIE_BY_ID_API } = userEndpoints;
 
 export function getAllMovies() {
   return async () => {
-    const toastId = toast.loading('Loading...');
+    // const toastId = toast.loading('Loading...');
     try {
       const response = await apiConnector('GET', GET_ALLMOVIES_API);
 
@@ -17,14 +17,14 @@ export function getAllMovies() {
         throw new Error(response.data.message);
       }
 
-      toast.success('Fetch Success');
+      // toast.success('Fetch Success');
       return response.data.movies; 
     } catch (error) {
       console.log('GET API ERROR........', error);
-      toast.error('Fetch Failed');
+      // toast.error('Fetch Failed');
       return [];
     } finally {
-      toast.dismiss(toastId);
+      // toast.dismiss(toastId);
     }
   };
 }
@@ -55,7 +55,7 @@ export function getMovieById(id) {
 
 export function getUser() {
   return async () => {
-    const toastId = toast.loading('Loading...');
+    // const toastId = toast.loading('Loading...');
     try {
 
       const token = localStorage.getItem('token');
@@ -71,14 +71,14 @@ export function getUser() {
         throw new Error(response.data.message);
       }
 
-      toast.success('User Fetch Success');
+      // toast.success('User Fetch Success');
       return response.data.user; 
     } catch (error) {
       console.log('GET USER API ERROR........', error);
-      toast.error('User Fetch Failed',error);
+      // toast.error('User Fetch Failed',error);
       return null;
     } finally {
-      toast.dismiss(toastId);
+      // toast.dismiss(toastId);
     }
   };
 }
