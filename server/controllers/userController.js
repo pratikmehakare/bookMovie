@@ -1,4 +1,4 @@
-const bcrypt = require("bcrypt");
+const bcrypt = require('bcryptjs')
 const User = require("../models/User");
 const Movies = require("../models/Movies");
 const jwt = require("jsonwebtoken");
@@ -59,12 +59,11 @@ exports.signup = async (req, res) => {
 
 exports.login = async (req, res) => {
   try {
-    // Get email and password from request body
+    
     const { email, password } = req.body;
 
-    // Check if email or password is missing
     if (!email || !password) {
-      // Return 400 Bad Request status code with error message
+    
       return res.status(400).json({
         success: false,
         message: `Please Fill up All the Required Fields`,
