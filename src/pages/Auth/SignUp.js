@@ -1,12 +1,12 @@
 import { signup } from "../../services/oprations/authAPI";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Password from "../../components/common/Password";
 import toast from "react-hot-toast";
 import { validateEmail } from "../../utils/helper";
 import Navbar from "../../components/Navbar/Navbar";
-import { fetchUser } from '../../redux/Slices/userSlice'
-import { useDispatch, useSelector } from "react-redux";
+// import { fetchUser } from '../../redux/Slices/userSlice'
+// import { useDispatch, useSelector } from "react-redux";
 
 
 const SignUp = () => {
@@ -75,28 +75,28 @@ const SignUp = () => {
     }
   };
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const navigate = useNavigate();
-  const user = useSelector((state) => state.user.user);
-  const userStatus = useSelector((state) => state.user.status);
-  const userError = useSelector((state) => state.user.error);
+  // const user = useSelector((state) => state.user.user);
+  // const userStatus = useSelector((state) => state.user.status);
+  // const userError = useSelector((state) => state.user.error);
 
-  useEffect(() => {
-    if (userStatus === 'idle') {
-      dispatch(fetchUser());
-    }
-  }, [dispatch, userStatus]);
+  // useEffect(() => {
+  //   if (userStatus === 'idle') {
+  //     dispatch(fetchUser());
+  //   }
+  // }, [dispatch, userStatus]);
 
-  useEffect(() => {
-    if (userError) {
-      navigate("/"); 
-    }
-  }, [userError, navigate]);
+  // useEffect(() => {
+  //   if (userError) {
+  //     navigate("/"); 
+  //   }
+  // }, [userError, navigate]);
 
   return (
     <div>
                 <Navbar
-        userInfo={user}
+        // userInfo={user}
       />
     
     <div className="flex justify-center items-center mt-10">

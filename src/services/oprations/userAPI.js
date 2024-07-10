@@ -71,6 +71,8 @@ export function getUser() {
         throw new Error(response.data.message);
       }
 
+      console.log("uss--",response.data.user);
+
       // toast.success('User Fetch Success');
       return response.data.user; 
     } catch (error) {

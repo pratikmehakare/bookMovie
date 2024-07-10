@@ -34,6 +34,8 @@ const Home = () => {
     }
   }, [userError, navigate]);
 
+  
+
   return (
     <div>
           <Navbar

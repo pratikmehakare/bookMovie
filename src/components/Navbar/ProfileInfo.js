@@ -2,6 +2,7 @@ import React from 'react';
 import { getInitials } from '../../utils/helper';
 
 const ProfileInfo = ({ onLogout, userInfo }) => {
+  
   if (!userInfo) return null;
   const fullName = `${userInfo.firstName} ${userInfo.lastName}`;
 

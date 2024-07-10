@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieById } from '../../services/oprations/userAPI';
+import { fetchUser } from "../../redux/Slices/userSlice";
+import Navbar from "../../components/Navbar/Navbar";
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 const MovieDetail = () => {
   const { id } = useParams();
