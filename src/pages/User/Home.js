@@ -16,6 +16,8 @@ const Home = () => {
     fetchMovies();
   }, []);
 
+
+//fetch user detail  
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector((state) => state.user.user);
@@ -33,7 +35,7 @@ const Home = () => {
       navigate("/"); 
     }
   }, [userError, navigate]);
-
+//---fetch user detail end
   
 
   return (

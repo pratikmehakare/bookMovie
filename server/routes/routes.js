@@ -2,6 +2,7 @@ const express = require('express');
 const { login, signup, getAllMovies, getUser, bookMovie, getMovieById } = require('../controllers/userController');
 const { addMovie, getMovies, deleteMovie, editMovie } = require('../controllers/adminController');
 const { isAdmin, auth } = require('../middleware/auth');
+const { orderPayment, verifyPayment } = require('../controllers/paymentController');
 const router = express.Router();
 
 //AUTH
@@ -14,8 +15,9 @@ router.get('/user/getUser',auth,getUser)
 router.get('/user/getMovieById/:id',getMovieById)
 
 //Book
-router.post('/user/book',auth,bookMovie)
-
+router.post('/user/book',auth,bookMovie)//not in use
+router.post('/user/order',orderPayment)
+router.post('/user/verify',auth,verifyPayment);
 
 //ADMIN------------------------------------------------------
 //ADD
