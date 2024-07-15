@@ -26,7 +26,7 @@ const Home = () => {
     if (userStatus === 'idle') {
       dispatch(fetchUser());
     }
-  }, [dispatch, userStatus]);
+  }, []);
 
   useEffect(() => {
     if (userError) {

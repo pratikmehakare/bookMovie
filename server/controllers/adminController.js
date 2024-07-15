@@ -132,6 +132,8 @@ exports.editMovie = async (req,res) =>{
 
     await movie.save();
 
+    console.log('Movie updated successfully:', movie);
+
     return res.json({
       success:true,
       message:"Edit Success",
